@@ -78,7 +78,7 @@ namespace LostThoughtStudios.DemterGift.PhysicsTriggers
                 return referenceSpriteImage;
             }
         }
-        private void OnDestroy()
+        private void ClearRenderTexture(VideoPlayer VideoObject)
         {
             RenderTexture rt = RenderTexture.active;
             RenderTexture.active = VideoPlayerObject.GetComponent<VideoPlayer>().targetTexture;
@@ -101,6 +101,8 @@ namespace LostThoughtStudios.DemterGift.PhysicsTriggers
                     EventGoal.GetComponent<TextMeshProUGUI>().text = DataSyncer.Instance.EventData[index].EventGoal;
 
                     VideoPlayerObject.GetComponent<VideoPlayer>().url = DataSyncer.Instance.EventData[index].EventVideo;
+
+                    VideoPlayerObject.GetComponent<VideoPlayer>().loopPointReached += ClearRenderTexture;
 
                     EventLogo.GetComponent<Image>().sprite = await GetIconTexture(new Uri(DataSyncer.Instance.EventData[index].EventLogo));
 

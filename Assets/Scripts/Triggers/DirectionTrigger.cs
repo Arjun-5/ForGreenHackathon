@@ -37,7 +37,7 @@ namespace LostThoughtStudios.DemterGift.PhysicsTriggers
 
         private Animator _buttonAnimator;
 
-        private int index = 0;
+        public int index = 0;
         // Start is called before the first frame update
         void Start()
         {

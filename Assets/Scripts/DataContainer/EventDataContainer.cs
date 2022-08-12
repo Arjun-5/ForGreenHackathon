@@ -30,6 +30,8 @@ namespace LostThoughtStudios.DemterGift.DataManager
     }
     public class NftDetails
     {
+
+        public int NftID { get; set; }
         public string NftTitle { get; set; }
 
         public string BidPrice { get; set; }

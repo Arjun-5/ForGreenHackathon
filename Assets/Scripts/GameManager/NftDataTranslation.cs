@@ -29,7 +29,7 @@ namespace LostThoughtStudios.DemterGift.DataManager
         public class EventNftDatum
         {
             [JsonProperty("Id")]
-            public long Id { get; set; }
+            public int Id { get; set; }
 
             [JsonProperty("name")]
             public string Name { get; set; }
@@ -41,7 +41,7 @@ namespace LostThoughtStudios.DemterGift.DataManager
             public string Bidprice { get; set; }
 
             [JsonProperty("price")]
-            public long Price { get; set; }
+            public string Price { get; set; }
 
             [JsonProperty("type")]
             public string Type { get; set; }
@@ -53,9 +53,11 @@ namespace LostThoughtStudios.DemterGift.DataManager
             {
                 outTranslatedData = translatedData;
 
+                outTranslatedData.NftID = this.Id;
+
                 outTranslatedData.NftTitle = this.Name;
 
-                outTranslatedData.BidPrice = this.Bidprice;
+                outTranslatedData.BidPrice = this.Price;
 
                 outTranslatedData.NftImageUrl = this.Image;
 
